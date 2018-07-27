@@ -1,0 +1,8 @@
+<div class="user">
+  <button class="btn" (click)="getUserFollowers()">User's followers</button>
+  <ul>
+    <li *ngFor="let follower of (followersState$ | async)?.followers">
+      {{ follower }}
+    </li>
+  </ul>
+</div>
