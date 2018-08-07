@@ -1,8 +1,16 @@
-<div class="user">
+<div class="user__followrs followers">
   <button class="btn" (click)="getUserFollowers()">User's followers</button>
-  <ul>
-    <li *ngFor="let follower of (followersState$ | async)?.followers">
-      {{ follower }}
+  <ul class="followers__list">
+    <li *ngFor="let follower of (followersState$ | async)?.followers" class="followers__item">
+      <div class="followers__avatar-placeholder">
+        <img [src]="follower.avatar_url" alt="" class="followers__avatar">
+      </div>
+      <div class="followers__inf">
+        <h3 class="followers__login">{{ follower.login }}</h3>
+        <a [href]="follower.html_url" class="follower__link link" target="_blank">
+          <span class="link__text">{{follower.html_url}}</span>
+        </a>
+      </div>
     </li>
   </ul>
 </div>

@@ -21,7 +21,7 @@ export class userEffects {
         );
       }),
       map(userFollowers => {
-        console.log(typeof userFollowers);
+        console.log(userFollowers);
         return {
           type: UserActions.SET_USER_FOLLOWERS,
           payload: userFollowers

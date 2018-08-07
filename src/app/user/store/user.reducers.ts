@@ -2,7 +2,7 @@ import * as userActions from './user.actions';
 import * as fromRoot from '../../store/root.reducers';
 
 export interface FeatureState extends fromRoot.State {
-  followers: State;
+  user: State;
 }
 
 export interface State {
@@ -18,11 +18,11 @@ export function userFollowersReducer(
   actions: userActions.userActions
 ) {
   switch (actions.type) {
-    // case userActions.SET_USER_FOLLOWERS:
-    //   return {
-    //     ...state,
-    //     followers: [...actions.payload]
-    //   };
+    case userActions.SET_USER_FOLLOWERS:
+      return {
+        ...state,
+        followers: [...actions.payload]
+      };
     default:
       return state;
   }
